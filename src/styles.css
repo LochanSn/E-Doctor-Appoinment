@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap");
+
+:root {
+  --bg-start: #fef3c7;
+  --bg-end: #bfdbfe;
+  --card: #fffdf8;
+  --text: #111827;
+  --muted: #475569;
+  --primary: #0f766e;
+  --primary-hover: #115e59;
+  --danger: #b91c1c;
+  --border: #dbeafe;
+  font-family: "Space Grotesk", sans-serif;
+  color: var(--text);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at 10% 10%, #fff7ed 0%, transparent 40%),
+    linear-gradient(120deg, var(--bg-start) 0%, var(--bg-end) 100%);
+}
+
+.page {
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.layout {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.adminLayout {
+  grid-template-columns: 1.2fr 1fr;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.1);
+  width: 100%;
+}
+
+h1,
+h2 {
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+p {
+  margin: 0;
+  color: var(--muted);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font: inherit;
+  background: white;
+}
+
+button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 160ms ease;
+}
+
+button:hover {
+  background: var(--primary-hover);
+}
+
+button.danger {
+  background: var(--danger);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hotelItem,
+.bookingItem {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: flex-start;
+  background: #ffffff;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.serviceGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.serviceChoice {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 8px;
+}
+
+.serviceChoice input {
+  width: auto;
+}
+
+.tabBar {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.tabBtn {
+  background: #0f172a;
+}
+
+.tabActive {
+  background: #1d4ed8;
+}
+
+.statGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.statBox {
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 10px;
+  background: #fff;
+  text-align: center;
+  font-weight: 600;
+}
+
+.hint {
+  font-size: 14px;
+}
+
+.error {
+  color: #b91c1c;
+}
+
+.ok,
+.statusOk {
+  color: #047857;
+  font-weight: 700;
+}
+
+.statusCancel {
+  color: #b91c1c;
+  font-weight: 700;
+}
+
+@media (max-width: 1000px) {
+  .layout,
+  .adminLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .tabBar,
+  .statGrid,
+  .split,
+  .serviceGrid {
+    grid-template-columns: 1fr;
+  }
+}
